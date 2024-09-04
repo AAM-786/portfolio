@@ -232,3 +232,26 @@ button.light-mode {
 button.light-mode:hover {
     background-color: #333; /* Darker background on hover */
 }
+
+
+
+
+/* Mouse Motion*/
+
+
+body {
+    margin: 0;
+    overflow: hidden;
+    background: #000; /* Dark background to make the neon stand out */
+}
+
+#neon-effect {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none; /* Makes sure the neon effect does not interfere with other elements */
+    mix-blend-mode: screen;
+    background: radial-gradient(circle, rgba(255, 102, 0, 0.7) 0%, rgba(255, 102, 0, 0) 80%);
+    transition: opacity 0.2s ease;
+    opacity: 0;
+}
