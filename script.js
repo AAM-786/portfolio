@@ -88,3 +88,24 @@ document.addEventListener('DOMContentLoaded', () => {
         greetingMessage.innerHTML = `<strong>${greeting}</strong><br>${formattedDate}`;
     }
 });
+
+
+const neonEffect = document.getElementById('neon-effect');
+
+document.addEventListener('mousemove', (event) => {
+    const x = event.clientX;
+    const y = event.clientY;
+
+    // Update the position of the neon effect
+    neonEffect.style.left = `${x - 150}px`; // Offset to center the effect
+    neonEffect.style.top = `${y - 150}px`;  // Offset to center the effect
+
+    // Show the neon effect with a smooth transition
+    neonEffect.style.opacity = 1;
+
+    // Hide the neon effect after a short delay
+    clearTimeout(neonEffect.timer);
+    neonEffect.timer = setTimeout(() => {
+        neonEffect.style.opacity = 0;
+    }, 150);
+});
